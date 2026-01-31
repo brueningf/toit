@@ -128,7 +128,7 @@ class RsaKey:
   The $hash is used to verify that the $digest has the correct length.
   Returns true if the signature is valid, false otherwise.
   */
-  verify-digest digest/io.Data signature/io.Data --hash/int -> bool:
+  verify-digest digest/ByteArray signature/ByteArray --hash/int -> bool:
     check-digest-length_ digest hash
     return rsa-verify_ rsa-key_ digest signature hash
 
