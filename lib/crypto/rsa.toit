@@ -140,7 +140,7 @@ class RsaKey:
     else if hash == SHA-512: expected-length = 64
     else: throw "INVALID_ARGUMENT"
 
-    if digest.byte-size != expected-length: throw "INVALID_ARGUMENT"
+    if digest.size != expected-length: throw "INVALID_ARGUMENT"
 
   static compute-digest_ message/io.Data hash/int -> ByteArray:
     if hash == SHA-256: return sha256 message
