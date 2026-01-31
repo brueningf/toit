@@ -81,7 +81,7 @@ test-rsa:
   sig-digest := priv.sign-digest digest --hash=rsa.RsaKey.SHA-256
   is-valid-digest := pub.verify-digest digest sig-digest --hash=rsa.RsaKey.SHA-256
   expect is-valid-digest
-  // Mixing APIs: Verify message against digest-signed signature
+  // Mixing APIs: Verify message against digest-signed signature.
   is-valid-mixed := pub.verify msg sig-digest
   expect is-valid-mixed
 
