@@ -132,7 +132,7 @@ class RsaKey:
     check-digest-length_ digest hash
     return rsa-verify_ rsa-key_ digest signature hash
 
-  static check-digest-length_ digest/io.Data hash/int:
+  static check-digest-length_ digest/ByteArray hash/int:
     expected-length := 0
     if hash == SHA-256: expected-length = 32
     else if hash == SHA-1: expected-length = 20
