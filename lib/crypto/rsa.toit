@@ -97,7 +97,7 @@ class RsaKey:
   The $digest must be the hash of the message to sign.
   The $hash is used to verify that the $digest has the correct length.
   */
-  sign-digest digest/io.Data --hash/int -> ByteArray:
+  sign-digest digest/ByteArray --hash/int -> ByteArray:
     check-digest-length_ digest hash
     return rsa-sign_ rsa-key_ digest hash
 
