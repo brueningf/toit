@@ -160,9 +160,7 @@ rsa-parse-public-key_ group key/io.Data -> any:
       rsa-parse-public-key_ group bytes
 
 rsa-sign_ rsa digest/io.Data hash/int -> ByteArray:
-  #primitive.crypto.rsa-sign:
-    return io.primitive-redo-io-data_ it digest: | digest-bytes |
-      rsa-sign_ rsa digest-bytes hash
+  #primitive.crypto.rsa-sign
 
 rsa-verify_ rsa digest/io.Data signature/io.Data hash/int -> bool:
   #primitive.crypto.rsa-verify:
