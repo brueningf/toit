@@ -117,7 +117,7 @@ class RsaKey:
   is-valid := key.verify "my message" signature
   ```
   */
-  verify message/io.Data signature/io.Data --hash/int=SHA-256 -> bool:
+  verify message/io.Data signature/ByteArray --hash/int=SHA-256 -> bool:
     digest := compute-digest_ message hash
     return verify-digest digest signature --hash=hash
 
